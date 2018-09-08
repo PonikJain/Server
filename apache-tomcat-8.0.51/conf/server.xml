@@ -43,7 +43,20 @@
               description="User database that can be updated and saved"
               factory="org.apache.catalina.users.MemoryUserDatabaseFactory"
               pathname="conf/tomcat-users.xml" />
+
+    <ResourceLink name="jdbc/TestDB"
+                	global="jdbc/TestDB"
+                    auth="Container"
+                    type="javax.sql.DataSource" />
+    
+    <ResourceLink name="jdbc/collegePortal"
+                	global="jdbc/collegePortal"
+                    auth="Container"
+                    type="javax.sql.DataSource" />
+  
   </GlobalNamingResources>
+
+  
 
   <!-- A "Service" is a collection of one or more "Connectors" that share
        a single "Container" Note:  A "Service" is not itself a "Container",
@@ -120,8 +133,8 @@
                resourceName="UserDatabase"/>
       </Realm>
 
-      <Host name="localhost"  appBase="webapps"
-            unpackWARs="true" autoDeploy="true">
+      <Host appBase="webapps" autoDeploy="true" deployOnStartup="true" 
+       deployXML="true" name="localhost" unpackWARs="true">
 
         <!-- SingleSignOn valve, share authentication between web applications
              Documentation at: /docs/config/valve.html -->
@@ -133,7 +146,7 @@
              Documentation at: /docs/config/valve.html
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
-               prefix="localhost_access_log" suffix=".txt"
+               prefix="server" suffix=".txt"
                pattern="%h %l %u %t &quot;%r&quot; %s %b" />
 
       </Host>

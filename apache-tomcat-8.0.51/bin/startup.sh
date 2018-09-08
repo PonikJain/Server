@@ -57,4 +57,5 @@ else
   fi
 fi
 
-exec "$PRGDIR"/"$EXECUTABLE" start "$@"
+# Added jpda arg for remote debugging
+exec "$PRGDIR"/"$EXECUTABLE" jpda start "$@"

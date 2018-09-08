@@ -208,7 +208,7 @@ fi
 CLASSPATH="$CLASSPATH""$CATALINA_HOME"/bin/bootstrap.jar
 
 if [ -z "$CATALINA_OUT" ] ; then
-  CATALINA_OUT="$CATALINA_BASE"/logs/catalina.out
+  CATALINA_OUT="$CATALINA_BASE"/logs/catalina.log
 fi
 
 if [ -z "$CATALINA_TMPDIR" ] ; then
@@ -256,7 +256,7 @@ if [ -z "$LOGGING_CONFIG" ]; then
     LOGGING_CONFIG="-Djava.util.logging.config.file=$CATALINA_BASE/conf/logging.properties"
   else
     # Bugzilla 45585
-    LOGGING_CONFIG="-Dnop"
+    LOGGING_CONFIG="-Djava.util.logging.config.file=$CATALINA_HOME/lib/log4j2.xml"
   fi
 fi
 
@@ -315,6 +315,7 @@ if [ $have_tty -eq 1 ]; then
     echo "Using CATALINA_PID:    $CATALINA_PID"
   fi
 fi
+
 
 if [ "$1" = "jpda" ] ; then
   if [ -z "$JPDA_TRANSPORT" ]; then
