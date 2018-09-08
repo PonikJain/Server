@@ -12,6 +12,7 @@
 /apache-tomcat-8.0.51/lib/*.jar
 /apache-tomcat-8.0.51/LICENSE
 /apache-tomcat-8.0.51/NOTICE
+/apache-tomcat-8.0.51/temp
 
 # BlueJ files
 *.ctxt
