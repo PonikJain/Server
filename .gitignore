@@ -9,7 +9,7 @@
 /apache-tomcat-8.0.51/webapps
 /apache-tomcat-8.0.51/work
 /apache-tomcat-8.0.51/RELEASE-NOTES
-/apache-tomcat-8.0.51/lib
+/apache-tomcat-8.0.51/lib/*.jar
 /apache-tomcat-8.0.51/LICENSE
 /apache-tomcat-8.0.51/NOTICE
 
